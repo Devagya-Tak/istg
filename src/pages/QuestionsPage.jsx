@@ -52,14 +52,14 @@ const QuestionsPage = () => {
                 <div className="flex flex-col gap-7 items-center justify-between">
                     <Link to={`http://localhost:5173/post/${id}`}>
 
-                    <p className="text-pink-400 text-center font-semibold text-2xl">http://localhost:5173/post/{id}</p>
+                    <p className="text-pink-400 text-center font-semibold text-2xl">https://istg-dev.vercel.app/post/{id}</p>
                     </Link>
                     <div className='w-full'>
 
                     <button
                         className={`${!copied ? 'bg-gradient-to-r from-pink-600 to-purple-600 text-white': 'bg-white text-black'} copy-button py-2 px-4 text-xl rounded w-full `}
                         onClick={() => {
-                            const postUrl = `http://localhost:5173/post/${id}`;
+                            const postUrl = `https://istg-dev.vercel.app/post/${id}`;
                             navigator.clipboard.writeText(postUrl);
                             setCopied(!copied)
                         }}
