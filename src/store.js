@@ -9,7 +9,7 @@ export const useLoginStore = create((set) => ({
     isLoggedIn: localStorage.getItem("isLoggedIn") === "true" || false,
     handleLogin: async (username) => {
         try {
-            const res = await axios.post('https://1f4e5fe2-c348-4984-aaba-cdedc6b19e30-00-207iuccia4dae.pike.replit.dev/login/', {
+            const res = await axios.post('https://devagya02.pythonanywhere.com//login/', {
                 username: username
             });
             localStorage.setItem("username", username);
@@ -48,12 +48,12 @@ export const useLoginStore = create((set) => ({
 export const useQuestionStore = create((set) => ({
     questions: [],
     getQuestions: async (id) => {
-        const res = await axios.get(`https://1f4e5fe2-c348-4984-aaba-cdedc6b19e30-00-207iuccia4dae.pike.replit.dev/get/${id}/`)
+        const res = await axios.get(`https://devagya02.pythonanywhere.com/get/${id}/`)
         console.log(res.data)
         set({ questions: res.data })
     },
     postQuestion: async (id, question) => {
-        const res = await axios.post(`https://1f4e5fe2-c348-4984-aaba-cdedc6b19e30-00-207iuccia4dae.pike.replit.dev/post/${id}/`, {
+        const res = await axios.post(`https://devagya02.pythonanywhere.com/post/${id}/`, {
             question: question
         })
         console.log(res.data)
