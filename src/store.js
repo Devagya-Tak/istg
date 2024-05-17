@@ -9,7 +9,7 @@ export const useLoginStore = create((set) => ({
     isLoggedIn: localStorage.getItem("isLoggedIn") === "true" || false,
     handleLogin: async (username) => {
         try {
-            const res = await axios.post('https://devagya02.pythonanywhere.com//login/', {
+            const res = await axios.post('https://devagya02.pythonanywhere.com/login/', {
                 username: username
             });
             localStorage.setItem("username", username);
@@ -20,7 +20,7 @@ export const useLoginStore = create((set) => ({
         } catch (err) {
             console.log("An error occurred:", err);
         }
-    },
+    }
     
 }));
 
