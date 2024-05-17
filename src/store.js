@@ -21,28 +21,7 @@ export const useLoginStore = create((set) => ({
             console.log("An error occurred:", err);
         }
     },
-    getPfp: async (username) => {
-        const options = {
-            method: 'POST',
-            url: 'https://rocketapi-for-instagram.p.rapidapi.com/instagram/search',
-            headers: {
-              'content-type': 'application/json',
-              'X-RapidAPI-Key': '6663f9f1b8msh91449d657922108p11c1c2jsn1ea0c072d3ba',
-              'X-RapidAPI-Host': 'rocketapi-for-instagram.p.rapidapi.com'
-            },
-            data: {query: username}
-          };
-          
-          try {
-              const response = await axios.request(options);
-              console.log(response.data.response.body.users[0].user.profile_pic_url);
-              localStorage.setItem("pfpURL", response.data.response.body.users[0].user.profile_pic_url);
-              set({ pfpURL:  response.data.response.body.users[0].user.profile_pic_url})
-          } catch (error) {
-              console.error(error);
-          }
-
-    }
+    
 }));
 
 export const useQuestionStore = create((set) => ({

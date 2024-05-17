@@ -6,10 +6,10 @@ import QuestionsPage from './QuestionsPage';
 const LoginPage = () => {
     const [username, setUsername] = useState('');
     const handleLogin = useLoginStore(state => state.handleLogin)
-    const getPfp = useLoginStore(state => state.getPfp)
+    // const getPfp = useLoginStore(state => state.getPfp)
     const handleClickLogin =  () => {
         handleLogin(username)
-        getPfp(username)
+        // getPfp(username)
     }
 
     return (
